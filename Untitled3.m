@@ -54,6 +54,10 @@ fprintf(' %f \n', theta);
 prob = sigmoid([1 35 50 14 ] * theta);
 fprintf(['For place with precipitation of 35, humidity of 50 and wind speed of 14km/hr, we predict an  ' ...
          'probability of raining= %f\n\n'], prob*100);
+	 if(prob*100>99.5)
+         
+         fprintf('Heavy rainfall is expected\n')
+     end
 
 % Compute accuracy on our training set
 p = predict(theta, X);
